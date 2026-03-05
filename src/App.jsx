@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Status from './components/Status'
 import Tickets from './components/Tickets'
 import { ToastContainer } from 'react-toastify';
+import Footer from './components/Footer'
 
 
 const fetchIssues = async () => {
@@ -38,8 +39,10 @@ function App() {
           <Status issues={issues} setIssues={setIssues} taskStatus={taskStatus} setTaskStatus={setTaskStatus} resolvedTasks={resolvedTasks} setResolvedTasks={setResolvedTasks}></Status>
         </div>
       </div>
+      <Footer></Footer>
       <ToastContainer></ToastContainer>
     </div>
+
   )
 }
 

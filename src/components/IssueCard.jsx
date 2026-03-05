@@ -1,5 +1,7 @@
 import React from 'react'
 import { toast } from 'react-toastify';
+import { FaCircle } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
 
 const IssueCard = ({ issue, taskStatus, setTaskStatus }) => {
 
@@ -24,7 +26,7 @@ const IssueCard = ({ issue, taskStatus, setTaskStatus }) => {
                 <div className="card-body">
                     <div className='flex justify-between items-center'>
                         <h2 className="card-title">{title}</h2>
-                        <div className={`badge ${status === 'Open' ? 'badge-success' : 'badge-warning'}`}>{status}</div>
+                        <div className={`badge ${status === 'Open' ? 'badge-success' : 'badge-warning'}`}><FaCircle /> {status}</div>
                     </div>
                     <p>{description}</p>
 
@@ -35,7 +37,8 @@ const IssueCard = ({ issue, taskStatus, setTaskStatus }) => {
                         </div>
                         <div className='flex items-center gap-4'>
                             <h1>{customer}</h1>
-                            <div>
+                            <div className='flex items-center gap-2'>
+                                <span><SlCalender /></span>
                                 <p>{createdAt}</p>
                             </div>
                         </div>

@@ -3,8 +3,12 @@ import React from 'react'
 const Navbar = () => {
 
     const lists = <div className='flex items-center gap-2 lg:flex-row flex-col'>
-        <li><a>Item1</a></li>
-        <li><a>Item3</a></li>
+        <li><a>Home</a></li>
+        <li><a>FAQ</a></li>
+        <li><a>Changelog</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Download</a></li>
+        <li><a>Contact</a></li>
 
         <button className="btn bg-linear-to-r from-[#632ee3] via-[#8448ea] to-[#9f62f2] text-white">+ New Ticket</button>
     </div>
@@ -22,7 +26,7 @@ const Navbar = () => {
                         {lists}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="btn btn-ghost text-xl">CS — Ticket System</a>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
