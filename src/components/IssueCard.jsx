@@ -8,6 +8,12 @@ const IssueCard = ({ issue, taskStatus, setTaskStatus }) => {
 
     const handleClick = (issue) => {
         // console.log(issue);
+
+        if (taskStatus.find(t => t.id === issue.id)) {
+            toast.error("Issue already in Task Status");
+            return;
+        }
+
         setTaskStatus([...taskStatus, issue]);
         toast("Issue added to Task Status");
     }
