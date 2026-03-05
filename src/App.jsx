@@ -1,34 +1,40 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Banner from './components/Banner'
+import Navbar from './components/Navbar'
+import Status from './components/Status'
+import Tickets from './components/Tickets'
+import { ToastContainer } from 'react-toastify';
+
+
+const fetchIssues = async () => {
+  const res = await fetch("/issues.json")
+  const data = await res.json()
+  return data
+}
+
+const issuesPromise = fetchIssues()
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [taskStatus, setTaskStatus] = useState([])
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='bg-[#F5F5F5]'>
+      <Navbar></Navbar>
+
+      <Banner></Banner>
+
+      <div className='lg:px-8 px-2 grid grid-cols-12 gap-8 mt-8'>
+        <div className='col-span-8'>
+          <Tickets issuesPromise={issuesPromise} taskStatus={taskStatus} setTaskStatus={setTaskStatus}></Tickets>
+        </div>
+        <div className='col-span-4'>
+          <Status taskStatus={taskStatus}></Status>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <ToastContainer></ToastContainer>
+    </div>
   )
 }
 
