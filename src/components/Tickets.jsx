@@ -1,10 +1,6 @@
-import React, { use } from 'react'
 import IssueCard from './IssueCard'
 
-const Tickets = ( {issuesPromise, taskStatus, setTaskStatus} ) => {
-
-    const issuesData = use(issuesPromise)
-    // console.log(issuesData);
+const Tickets = ( {issues, taskStatus, setTaskStatus} ) => {
 
     return (
         <div>
@@ -12,7 +8,7 @@ const Tickets = ( {issuesPromise, taskStatus, setTaskStatus} ) => {
 
             <div className='grid grid-cols-2 gap-4'>
                 {
-                    issuesData.map(issue => (<IssueCard key={issue.id} issue={issue} taskStatus={taskStatus} setTaskStatus={setTaskStatus}></IssueCard>))
+                    issues.map(issue => (<IssueCard key={issue.id} issue={issue} taskStatus={taskStatus} setTaskStatus={setTaskStatus}></IssueCard>))
                 }
             </div>
         </div>

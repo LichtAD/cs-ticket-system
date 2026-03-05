@@ -1,6 +1,7 @@
 import React from 'react'
+import { toast } from 'react-toastify';
 
-const Status = ({ taskStatus, setTaskStatus, resolvedTasks, setResolvedTasks }) => {
+const Status = ({ taskStatus, setTaskStatus, resolvedTasks, setResolvedTasks, issues, setIssues }) => {
 
     const handleComplete = (task) => {
         // console.log(task);
@@ -12,7 +13,9 @@ const Status = ({ taskStatus, setTaskStatus, resolvedTasks, setResolvedTasks }) 
         setTaskStatus(taskStatus.filter(t => t.id !== task.id));
 
         // now removing from customer tickets
-        // setIssues(issues.filter(issue => issue.id !== task.id));
+        setIssues(issues.filter(issue => issue.id !== task.id));
+
+        toast.success("Task Completed");
     }
 
     return (
