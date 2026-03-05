@@ -1,6 +1,19 @@
 import React from 'react'
 
-const Status = ({ taskStatus }) => {
+const Status = ({ taskStatus, setTaskStatus, resolvedTasks, setResolvedTasks }) => {
+
+    const handleComplete = (task) => {
+        // console.log(task);
+
+        // adding to resolved tasks after completing
+        setResolvedTasks([...resolvedTasks, task]);
+
+        // after completing, removing from task status
+        setTaskStatus(taskStatus.filter(t => t.id !== task.id));
+
+        // now removing from customer tickets
+        // setIssues(issues.filter(issue => issue.id !== task.id));
+    }
 
     return (
         <div >
@@ -31,6 +44,25 @@ const Status = ({ taskStatus }) => {
             </div>
             <div>
                 <h1 className='text-2xl font-semibold mb-4'>Resolved Task</h1>
+
+                <div>
+                    {
+                        resolvedTasks.length === 0 ?
+                            <p className='text-gray-500'>No Resolved Task Found</p>
+                            :
+                            <div className='flex flex-col gap-4'>
+                                {
+                                    resolvedTasks.map(task => (
+                                        <div key={task.id} className="card w-96 bg-[#E0E7FF] card-sm shadow-sm">
+                                            <div className="card-body">
+                                                <h2 className="card-title">{task.title}</h2>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                    }
+                </div>
             </div>
         </div>
     )

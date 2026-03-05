@@ -18,6 +18,7 @@ const issuesPromise = fetchIssues()
 function App() {
 
   const [taskStatus, setTaskStatus] = useState([])
+  const [resolvedTasks, setResolvedTasks] = useState([])
 
   return (
     <div className='bg-[#F5F5F5]'>
@@ -30,7 +31,7 @@ function App() {
           <Tickets issuesPromise={issuesPromise} taskStatus={taskStatus} setTaskStatus={setTaskStatus}></Tickets>
         </div>
         <div className='col-span-4'>
-          <Status taskStatus={taskStatus}></Status>
+          <Status taskStatus={taskStatus} setTaskStatus={setTaskStatus} resolvedTasks={resolvedTasks} setResolvedTasks={setResolvedTasks}></Status>
         </div>
       </div>
       <ToastContainer></ToastContainer>

@@ -4,6 +4,7 @@ import IssueCard from './IssueCard'
 const Tickets = ( {issuesPromise, taskStatus, setTaskStatus} ) => {
 
     const issuesData = use(issuesPromise)
+    // console.log(issuesData);
 
     return (
         <div>
