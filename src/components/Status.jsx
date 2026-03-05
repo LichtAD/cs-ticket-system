@@ -19,9 +19,9 @@ const Status = ({ taskStatus, setTaskStatus, resolvedTasks, setResolvedTasks, is
     }
 
     return (
-        <div >
+        <div className='px-2 lg:px-0'>
             <div className='mb-4'>
-                <h1 className='text-2xl font-semibold mb-4'>Task Status</h1>
+                <h1 className='text-2xl font-semibold mb-4 my-8 lg:my-0'>Task Status</h1>
 
                 {
                     taskStatus.length === 0 ?

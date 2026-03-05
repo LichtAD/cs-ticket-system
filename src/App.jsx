@@ -31,7 +31,7 @@ function App() {
 
       <Banner taskStatus={taskStatus} resolvedTasks={resolvedTasks}></Banner>
 
-      <div className='lg:px-8 px-2 grid grid-cols-12 gap-8 mt-8'>
+      <div className='lg:px-8 px-2 lg:grid grid-cols-12 gap-8 mt-8'>
         <div className='col-span-8'>
           <Tickets issues={issues} taskStatus={taskStatus} setTaskStatus={setTaskStatus}></Tickets>
         </div>

@@ -6,7 +6,7 @@ const Tickets = ( {issues, taskStatus, setTaskStatus} ) => {
         <div>
             <h1 className='text-2xl font-semibold mb-4'>Customer Tickets</h1>
 
-            <div className='grid grid-cols-2 gap-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 {
                     issues.map(issue => (<IssueCard key={issue.id} issue={issue} taskStatus={taskStatus} setTaskStatus={setTaskStatus}></IssueCard>))
                 }

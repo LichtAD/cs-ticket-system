@@ -7,7 +7,7 @@ import { MdAlternateEmail } from "react-icons/md";
 const Footer = () => {
     return (
         <div className='mt-10 bg-neutral text-neutral-content'>
-            <div className="footer sm:footer-horizontal p-10 flex">
+            <div className="footer sm:footer-horizontal p-10 lg:flex">
                 <nav className='flex-1 mr-16'>
                     <h6 className="footer-title">CS — Ticket System</h6>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>

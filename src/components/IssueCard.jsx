@@ -22,7 +22,7 @@ const IssueCard = ({ issue, taskStatus, setTaskStatus }) => {
 
     return (
         <div onClick={() => handleClick(issue)} className='cursor-pointer'>
-            <div className="card bg-base-100 h-36 shadow-sm">
+            <div className="card bg-base-100 lg:h-36 shadow-sm">
                 <div className="card-body">
                     <div className='flex justify-between items-center'>
                         <h2 className="card-title">{title}</h2>
